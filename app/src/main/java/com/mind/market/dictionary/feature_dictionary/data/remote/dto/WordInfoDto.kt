@@ -1,6 +1,6 @@
 package com.mind.market.dictionary.feature_dictionary.data.remote.dto
 
-import com.mind.market.dictionary.feature_dictionary.domain.model.WordInfo
+import com.mind.market.dictionary.feature_dictionary.data.local.entity.WordInfoEntity
 
 data class WordInfoDto(
     val meanings: List<MeaningDto>,
@@ -9,8 +9,8 @@ data class WordInfoDto(
     val phonetics: List<PhoneticDto>,
     val word: String
 ) {
-    fun toWordInfo(): WordInfo =
-        WordInfo(
+    fun toWordInfoEntity(): WordInfoEntity =
+        WordInfoEntity(
             meanings = meanings.map { meaningDto -> meaningDto.toMeaning() },
             origin = origin,
             phonetic = phonetic,
