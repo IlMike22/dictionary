@@ -52,6 +52,8 @@ object WordInfoModule {
             .build()
     }
 
+    @Provides
+    @Singleton
     fun provideApi(): IDictionaryApi {
         return Retrofit.Builder()
             .baseUrl(BASE_URL)

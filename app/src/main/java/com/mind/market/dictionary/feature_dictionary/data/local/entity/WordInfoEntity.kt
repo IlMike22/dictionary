@@ -7,17 +7,17 @@ import com.mind.market.dictionary.feature_dictionary.domain.model.WordInfo
 
 @Entity
 data class WordInfoEntity(
-    val word: String,
-    val phonetic: String,
-    val origin: String,
-    val meanings: List<Meaning>,
+    val word: String? = null,
+    val phonetic: String? = null,
+    val origin: String? = null,
+    val meanings: List<Meaning>? = null,
     @PrimaryKey val id: Int? = null
 ) {
     fun toWordInfo(): WordInfo =
         WordInfo(
-            meanings = meanings,
-            origin = origin,
-            phonetic = phonetic,
-            word = word
+            meanings = meanings ?: emptyList(),
+            origin = origin ?: "",
+            phonetic = phonetic ?: "",
+            word = word ?: ""
         )
 }

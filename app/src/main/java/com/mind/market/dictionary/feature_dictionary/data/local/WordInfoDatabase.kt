@@ -7,7 +7,7 @@ import com.mind.market.dictionary.feature_dictionary.data.local.entity.WordInfoE
 
 @Database(
     entities = [WordInfoEntity::class],
-    version = 1
+    version = 2
 )
 @TypeConverters(Converters::class)
 abstract class WordInfoDatabase : RoomDatabase() {
